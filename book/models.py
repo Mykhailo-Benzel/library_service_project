@@ -10,7 +10,7 @@ class Book(models.Model):
     author = models.CharField(max_length=255)
     cover = models.CharField(
         max_length=4,
-        choices=CoverChoices,
+        choices=CoverChoices.choices,
         default=CoverChoices.HARD
     )
     inventory = models.PositiveIntegerField()
@@ -21,4 +21,3 @@ class Book(models.Model):
 
     def __str__(self) -> str:
         return f"{self.title} ({self.author})"
-
